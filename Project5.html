@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CARD </title>
+        <style>
+         @import url('https://fonts.googleeapls.com/css2?family=Poopins&display=swap');
+         *{
+             margin: 0; padding: 0;
+             box-sizing: border-box;
+             font-family: 'Poopins',sans-serif;
+         }
+         body{
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             height: 200vh;
+         }
+         .card{
+             width: 250px;
+             height: 250px;
+             margin: 3em;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             flex-direction: column;
+             position: relative; cursor: pointer;
+             transition: all .4ms;
+         }
+         .card:hover{
+             color: white;
+         }
+         .card::before,.card::after{
+             content: '';position: absolute;
+             top: 0;left: 0;
+             width: 100%; height: 100%;
+             background: rgb(243,243,243);
+             z-index: -1; border-radius: 10px;
+             transition: all .4ms;
+         }
+         .card::after{
+             background: #F8485E;
+             transform-origin: Right bottom;
+             transform: translate(10%,10%);scale: (0.3);
+             border-radius: 50%; transition:all .4ms;
+
+         }
+         .card:hover::after{
+             transform:translate(0) scale(1);
+             border-radius: 0;border-radius: 10px;
+
+         }
+         .card:hover::before{
+             transform-origin: right bottom;
+             transform: translate(10%,10%) scale(0.3);
+             border-radius: 50%;z-index: 1;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h1>Card</h1>
+            <p>1</p>
+        </div>
+        <div class="card">
+            <h1>Card</h1>
+            <p>2</p>
+        </div><div class="card">
+            <h1>Card</h1>
+            <p>3</p>
+        </div>
+    </body>
+</html>
